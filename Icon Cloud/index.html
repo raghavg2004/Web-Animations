@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Sphere</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <span class="Sphere"></span>
+    <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"> </script>
+    <script>
+        const Texts = [
+            'HTML', 'CSS', 'JAVASCRIPT',
+            'SWIFT', 'MONGOOSE', 'REACT',
+            'PYTHON', 'SASS',
+            'DJANGO', 'NODEJS', 'MONGODB',
+            'EXPRESS', 'MYSQL', 'JQUERY', 'JAVA'
+        ];
+        var tagCloud = TagCloud('.Sphere', Texts, {
+            radius: 230,
+            maxSpeed: 'normal',
+            initSpeed: 'fast',
+            direction: 135,
+            keep: true
+        });
+        var color = '#FF5733 ';
+        document.querySelector('.Sphere').style.color = color;
+    </script>
+</body>
+</html>
