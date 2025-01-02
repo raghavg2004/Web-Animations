@@ -1,0 +1,63 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+#tile-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns fixed */
+    grid-template-rows: repeat(4, 1fr); /* 4 rows fixed */
+    gap: 15px; /* Space between tiles */
+    width: 90vw; /* Responsive container width */
+    height: 90vw; /* Maintain square aspect ratio for the grid */
+    max-width: 500px; /* Prevent tiles from being too large on large screens */
+    max-height: 500px; /* Limit grid height */
+}
+
+.tile {
+    position: relative;
+    background-color: #ddd;
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 1.5s ease-out;
+}
+
+.tile:hover {
+    transform: scale(1.05); /* Small zoom effect */
+}
+
+.tile img {
+    width: 80%; /* Responsive size for the icon inside the tile */
+    height: 80%;
+    object-fit: contain; /* Maintain aspect ratio of the image */
+    backface-visibility: hidden;
+}
+
+/* Media queries for adjusting the tile and icon sizes */
+@media (max-width: 768px) {
+    #tile-container {
+        width: 95vw;
+        height: 95vw;
+    }
+}
+
+@media (max-width: 480px) {
+    #tile-container {
+        width: 100vw;
+        height: 100vw;
+        gap: 5px; /* Reduce gap on small screens */
+    }
+
+    .tile img {
+        width: 70%; /* Smaller icon size on mobile */
+        height: 70%;
+    }
+}
